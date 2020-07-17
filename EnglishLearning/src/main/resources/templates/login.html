@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+	
+	
+	<div class="wrapper">	
+		<!-- loginform -->
+		<div class="login">
+
+			<form th:action="@{/login}" class="login-form" method="post">
+			<h1>Sign In</h1>
+			<div class="input-control">
+				
+				<input type="text" name="username">
+				<div class="placeholder">username</div>
+			</div>
+			<div class="input-control">	
+				<input type="password" name="password">
+				<div class="placeholder">password</div>
+				<div class="show-password fas fa-eye-slash" id="show-password"></div>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox">
+				<div class="fas fa-check"></div>
+				Nhớ mật khẩu
+
+			</div>
+			<button class="btn fas fa-arrow-right" type="submit"></button>
+			</form>
+		</div>
+		<!-- end login form -->		
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

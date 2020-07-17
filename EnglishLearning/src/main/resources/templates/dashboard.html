@@ -1,0 +1,131 @@
+<!DOCTYPE html >
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">    
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+	<div class="wrapper">
+		
+		<div class="menu-left">
+			<div class="about-admin">
+				<div class="image">
+					<img  th:src="@{'/images/'+${avatar}}">
+				</div>
+				<div class="name" th:text="${username}"></div>
+
+			</div>
+			<div class="menu">
+				<nav class="nav flex-column">
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="#" class="nav-link">Từ vựng</a>
+					</li>
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="http://localhost:8080/add-vocab" class="nav-link">Thêm Từ vựng</a>
+					</li>
+					
+					
+					
+				</nav>
+			</div>
+			
+</div>
+		<div class="content-right">
+			<div class="header">
+				<div class="thongbao"> 
+				 <button ><i class="fas fa-user icon"></i>	</button>
+					<form th:action="@{/logout}" method="post" style="width: 40px">			 
+					  <button type="submit"><i class="fas fa-sign-out-alt icon"></i>
+					  </button>
+					</form>
+				</div>
+			</div>
+			<div class="main-content">
+			
+				
+				<div class="question">
+				<h4 style="text-align: center">Chủ đề <span th:text="${category}" id ="category"></span></h4>
+					<div class="result">
+						<i class="fas icon fa-play-circle" id="start"></i>
+						<i class="fas fa-poll icon" data-toggle="modal" data-target="#correct-modal"></i>
+						<button  id="scoreThis" >0</button>
+						<i class="fas fa-volume-mute icon" id="btnAudio" style="font-size : 25px; color:#f368e0"></i>
+						
+						
+						
+					</div>
+					<p class="vocabulary" id="vocabulary"></p>
+					<div class="answer">
+						<button class ="btn button button-answer" id="a"></button>
+						<button class ="btn button button-answer" id="b"></button>
+						<button class ="btn button button-answer" id="c"></button>
+						<button class ="btn button button-answer" id="d"></button>
+
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+
+	</div>
+	
+	<div class="modal fade" id="correct-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					
+					<h4 class="modal-title">Kết quả của bạn</h4>
+					<p>Điểm số: <span id="scoreThat" style="color: #d63031"></span> </p>
+				</div>
+				<div class="modal-body">
+					<table  cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<td>
+								<table class="table " style="width: 650px;margin-bottom: 0">
+									<tr>
+											<th class="cell0">Từ vựng</th>
+											<th class="cell1">Đáp án đúng</th>
+											<th class="cell2">Đáp án của bạn</th>
+											<th class="cell3"></th>
+										</tr>
+								</table>
+							</td>
+						</tr>
+						<tr> 
+							<td>
+						<div style="height: 460px;overflow: auto;width: 666px" >	
+							<table class="table ">	
+							<tbody id="table-result">
+							
+						</tbody>
+								
+							</table>
+						</div>
+							</td>
+						</tr>
+
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+			
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		    <script src="js/dashboard.js"></script>
+</body>
+</html>

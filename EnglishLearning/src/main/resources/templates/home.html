@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<div class="wrapper">
+		
+		<div class="menu-left">
+			<div class="about-admin">
+				<div class="image">
+					<img th:src="@{'/images/'+${avatar}}" >
+				</div>
+				<div class="name">admin</div>
+
+			</div>
+			<div class="menu">
+				<nav class="nav flex-column">
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="http://localhost:8080/home" class="nav-link">Từ vựng</a>
+					</li>
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="http://localhost:8080/add" class="nav-link">Thêm Từ vựng</a>
+					</li>
+					
+					
+				</nav>
+			</div>
+			
+		</div>
+		<div class="content-right">
+			<div class="header">
+				<div class="thongbao"> 
+				 <button ><i class="fas fa-user icon"></i>	</button>
+					<form th:action="@{/logout}" method="post" style="width: 40px">			 
+					  <button type="submit"><i class="fas fa-sign-out-alt icon"></i>
+					  </button>
+					</form>
+				</div>
+			</div>
+			<div class="main-content">
+				<div class="grid-container">
+				  	<th:block th:each="category : ${categories}">
+				  		<div class="grid-item card" >
+				  			<p th:text="${category.name}"></p>
+				  			<a th:href="@{'http://localhost:8080/test?q='+${category.name}}">
+				  				<img alt="" th:src="@{'/images/category'+${category.id}+'.jpg'}">
+				  			</a>
+				  		</div>
+				  	</th:block>
+				</div>
+				
+				
+
+			</div>
+		</div>
+
+	</div>
+	
+	
+	
+			
+		
+	
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	   	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	    	<script type="text/javascript" src="js/home.js"></script>
+		    
+</body>
+</html>

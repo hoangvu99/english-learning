@@ -1,0 +1,202 @@
+@charset "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	
+}
+.wrapper{
+	max-width:100vw;
+	position: relative; 
+}
+.menu-left{
+	width: 270px;
+	height: 100vh;
+	float: left;
+	background: #2c3e50;
+	color: #fff;
+}
+.content-right{
+	width: calc(100% - 270px);
+	height: 100vh;
+	
+	float: right;
+}
+.about-admin{
+	width: 100%;
+	height: 170px;
+	padding: 20px;
+	
+}
+.image , .name{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.about-admin img{
+	width: 100px;
+	height: 100px;
+	
+	border: 3px solid #fff;
+	border-radius: 50%;
+}
+.nav-item{
+	width: 100%;
+	height: 50px;
+	
+	border-top: 0.5px solid #fff;
+	border-bottom: 0.5px solid #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.nav-link{
+	color: #fff;
+}
+
+.content-right{
+	background: #f7f7f7;
+}
+.header{
+	width: 100%;
+	height: 60px;
+	background: #fff;
+	
+	margin-bottom: 10px;
+}
+.thongbao{
+	float: right;
+	width: 110px;
+	height: 100%;
+	padding: 10px ;
+	display: flex;
+	
+}
+.main-content{
+	width: 100%;
+	height: calc(100% - 70px);
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	
+	
+	
+}
+.question{
+	width: 1100px;
+	height: 250px;	
+	padding: 20px;
+	position: relative;
+	margin-top: 50px;
+}
+.question p.vocabulary{
+	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1.7px;
+	font-weight: 700;
+	color:#00ff00;
+	height:60px;
+	margin-bottom: 50px;
+}
+.answer{
+	width: 100%;
+
+}
+.button {
+	width: 250px;
+	height: 70px;
+	padding: 0 0;
+	margin-right: 10px;
+	border: 1px solid #bdc3c7;
+	background: #fff;
+	
+}
+.result{
+	width: 170px;
+	height:50px;
+	position: absolute;
+	top: 20%;
+	right: 2%;
+	padding: 10px 10px;
+	display: flex;
+	
+}
+.result .icon{
+	margin-left: 10px;
+}
+.icon {
+	font-size: 30px;
+	
+	cursor: pointer;
+}
+
+.fa-poll,.fa-check-circle{
+	color: #00ff00;
+}
+.fa-check-circle{
+	font-size: 25px;
+	color: #00ff00;
+}
+.fa-play-circle{
+	
+	color:#fd7e14;
+}
+.fa-times-circle{
+	font-size: 25px;
+	color:red;
+}
+.thongbao button {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	outline: none;
+	border: none;
+	margin-right: 10px;
+
+}
+.thongbao .icon {
+	font-size: 25px;
+	margin-right: 0px;
+}
+.fa-user{
+	color: #fd79a8;
+}
+.fa-sign-out-alt{
+	color: #fab1a0;
+}
+.modal-dialog{
+	max-width: 700px;
+	height: 700px;
+	margin: 30px auto;
+	
+}
+.modal-content{
+	width: 100%;
+	height: 100%;
+}
+table th,td {
+	text-align: center;
+	padding:0;
+}
+
+.cell0,.cell1,.cell2{
+	width:200px;
+}
+.cell3{
+	width:48px;
+}
+#scoreThis{
+	width:30px;
+	height:30px;
+	margin-left: 10px;
+	border-radius: 50%;
+	border:none;
+	outline:none;
+	color: #d63031;
+	
+}
+
+

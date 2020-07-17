@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/add.css">
+</head>
+<body>
+		
+		
+	<div class="wrapper">
+		
+		<div class="menu-left">
+			<div class="about-admin">
+				<div class="image">
+					<img th:src="@{'/images/'+${avatar}}" >
+				</div>
+				<div class="name">admin</div>
+
+			</div>
+			<div class="menu">
+				<nav class="nav flex-column">
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="#" class="nav-link" >Từ vựng</a>
+
+					</li>
+					<li class="nav-item">
+						<span><i class="far fa-file-word"></i></span>
+						<a href="#" class="nav-link">Thêm từ vựng</a>
+					</li>
+					
+				</nav>
+			</div>
+			
+		</div>
+		<div class="content-right">
+			<div class="header">
+				<div class="thongbao"></div>
+			</div>
+			<div class="main-content">
+				
+				<button class="btn btn-primary btn-save" id="btn-save">Save</button>
+				<button class="btn btn-primary btn-add" id="btn-add">+</button>
+				<div class="add">
+					<p >Thêm từ vựng</p>
+					<div class="vocabulary-mean">
+						<div class="vocabulary">
+					
+							<div class="form-group form-inline">
+							<select id="select" class="form-control select">
+								<th:block th:each="category : ${categories}">
+									<option th:text="${category.name}" th:id="${category.id}"></option>
+								</th:block>
+							</select>
+							<input type="text" class="form-control" name="" placeholder="enter..." id="vocab">
+							<input type="text" class="form-control me" name="" placeholder="enter...">
+							</div>
+						</div>
+						<div class="mean" id="mean-box">
+							
+							
+
+							
+							
+							
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	   	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	    	<script type="text/javascript" src="js/add.js"></script>
+</body>
+</html>
